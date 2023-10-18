@@ -44,5 +44,43 @@ app.use(express.json());
 //Process incomming urlencoded request payload.
 app.use(express.urlencoded({ extended: false }));
 
+/////////////////////////////////////////////////////////////////////////////
+// In this section we handle incomming request with payload
+/////////////////////////////////////////////////////////////////////////////
+/**
+ * The endpoint for serving home page.
+ *
+ * @auth none
+ * @method GET
+ * @access public
+ * @url protocol://domain.tld/
+ */
+app.get("/", (req, res) => {
+  // Template data
+  const data = {};
+
+  // Set showndown flavor
+  showdown.setFlavor('github');
+
+  // Markdown to html converter
+  const converter = new showdown.Converter();
+
+  // Get content of the README.md file
+  const markdown = fs.readFileSync(
+    path.join(__dirname, "/../README.md")
+  );
+
+  // Content type of the response
+  res.set('Content-Type', 'text/html');
+  
+  // Serve the markdown 
+  // documentation file as the home page
+  data.readme = (Buffer.from(
+    converter.makeHtml(markdown.toString())
+  ));
+
+  res.render(path.join(__dirname, "/views/index.html"), data);
+});
+
 // Export the Express application
 module.exports = app;
