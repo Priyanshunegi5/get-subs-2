@@ -82,5 +82,30 @@ app.get("/", (req, res) => {
   res.render(path.join(__dirname, "/views/index.html"), data);
 });
 
+/**
+ * The api endpoint for showing
+ * all subscribers list with details.
+ *
+ * @auth none
+ * @method GET
+ * @access public
+ * @url protocol://domain.tld/subscribers
+ */
+app.get("/subscribers", async (req, res, next) => {
+  try {
+    // Retrieve all subscribers using model
+    let subscribers = await subscriberModel.find();
+
+    // Send the subscribers as a
+    // JSON response with a status of 200 (OK)
+    res.status(200).json(subscribers);
+  } catch (err) {
+    // Set the response status to 400 (Bad Request)
+    res.status(400);
+    // Pass the error to the error handling middleware
+    next(err);
+  }
+});
+
 // Export the Express application
 module.exports = app;
