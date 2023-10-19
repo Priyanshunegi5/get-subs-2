@@ -107,5 +107,34 @@ app.get("/subscribers", async (req, res, next) => {
   }
 });
 
+/**
+ * The api endpoint for showing all subscribers
+ * with only two fields [name] and [subscribedChannel].
+ *
+ * @auth none
+ * @method GET
+ * @access public
+ * @url protocol://domain.tld/subscribers/names
+ */
+app.get("/subscribers/names", async (req, res, next) => {
+  try {
+    // Retrieve subscribers with only the name
+    // and subscribedChannel fields using model
+    let subscribers = await subscriberModel.find(
+      {},
+      { name: 1, subscribedChannel: 1, _id: 0 }
+    );
+
+    // Send the subscribers as a
+    // JSON response with a status of 200 (OK)
+    res.status(200).json(subscribers);
+  } catch (err) {
+    // Set the response status to 400 (Bad Request)
+    res.status(400);
+    // Pass the error to the error handling middleware
+    next(err);
+  }
+});
+
 // Export the Express application
 module.exports = app;
