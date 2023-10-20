@@ -136,5 +136,49 @@ app.get("/subscribers/names", async (req, res, next) => {
   }
 });
 
+/**
+ * The api endpoint for showing
+ * details of the subscriber for given id.
+ *
+ * @auth none
+ * @method GET
+ * @access public
+ * @url protocol://domain.tld/subscribers/:id
+ */
+app.get("/subscribers/:id", async (req, res) => {
+  try {
+    // Extract the ID parameter from the request URL
+    const id = req.params.id;
+
+    if (!id) {
+      // Send a JSON response
+      // with a status of 400 (Bad Request)
+      res.status(400).json({
+        message: "No ID provided",
+      });
+      return;
+    }
+
+    // Find a subscriber with
+    // the given ID using model
+    const subscriber = await subscriberModel.findById(id);
+
+    if (subscriber) {
+      // Send the subscriber
+      // details as the response
+      res.send(subscriber);
+      return;
+    }
+
+    // Send a JSON response
+    // with a status of 404 (Not Found)
+    res.status(404).json({ message: "Subscriber not found" });
+  } catch (error) {
+    // Send a JSON response with a status of
+    // 400 (Bad Request) and the error message
+    res.status(400).json({ message: error.message });
+  }
+});
+
 // Export the Express application
 module.exports = app;
