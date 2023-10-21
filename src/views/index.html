@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Youtube Subscribers</title> <!-- Custom Style Sheet -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+        
+        * {
+          margin: auto;
+        }
+        
+        body {
+          color: #121d2f;
+          min-width: 300px;
+          background: #121212;
+          font-family: Helvetica, Arial, sans-serif;
+        }
+        
+        .main {
+          min-width: 250px;
+          max-width: 85vw;
+          margin-top: 10vh;
+          border-radius: 5px;
+          margin-bottom: 30px;
+          box-shadow: 0px 1px 4px 0px #ab2b2b;
+        }
+
+        .main .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .main .logo img {
+            width: 20vw;
+            height: auto;
+        }
+        
+        .main .top {
+          padding: 15px 25px;
+          padding-bottom: 23px;
+          font-weight: 300;
+          text-align: center;
+          background: #212121;
+          border-radius: 5px 5px 0 0;
+        }
+        
+        .main .top h2 {
+          color: #999;
+          font-family: sans-serif;
+          font-size: 28px;
+          font-weight: 300;
+          line-height: normal;
+          text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+        }
+        
+        .main .container {
+          padding: 30px;
+          padding-bottom: 0;
+          background: #0e0d0b;
+        }
+        
+        .heading .title {
+          margin-bottom: 16px;
+          text-align: center;
+          position: relative;
+          font-size: 32px;
+          font-weight: 300;
+          color: #0a4a2d;
+        }
+        
+        .heading .title::before {
+          content: "";
+          z-index: 10;
+          position: absolute;
+          height: 0;
+          border-bottom: 1px solid #676767;
+          border-top: 1px solid #d3d3d3;
+          width: 10vw;
+          left: 0;
+          top: 20px;
+        }
+        
+        .heading .title::after {
+          content: "";
+          position: absolute;
+          z-index: 10;
+          height: 0;
+          border-bottom: 1px solid #676767;
+          border-top: 1px solid #d3d3d3;
+          width: 5vw;
+          right: 0;
+          top: 20px;
+        }
+        
+        .row {
+          display: inline-block;
+        }
+        
+        .row::before {
+          content: "";
+          display: table;
+        }
+        
+        .row .one {
+          float: left;
+          position: relative;
+          width: 45%;
+        }
+        
+        .one article {
+          margin-bottom: 1.3em;
+          font-size: 0.9rem;
+          background: #2b2b2d;
+        }
+        
+        .one article i {
+          float: left;
+          vertical-align: middle !important;
+          font-size: 2.6em;
+          color: #0c9;
+        }
+        
+        .one h3,
+        p {
+          margin-left: 40px;
+          vertical-align: middle;
+        }
+        
+        .one h3 {
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 22px;
+          margin-bottom: 15px;
+          color: #999 !important;
+          position: relative;
+          top: 8px;
+        }
+        
+        .one p {
+          line-height: 24px;
+          font-size: 15px;
+          color: #555;
+          padding-top: 15px;
+        }
+        
+        .row .two {
+          float: right;
+          position: relative;
+          width: 45%;
+        }
+        
+        .two article {
+          margin-bottom: 1.3em;
+          font-size: 0.9rem;
+          background: #2b2b2d;
+        }
+        
+        .two article i {
+          float: left;
+          vertical-align: middle !important;
+          font-size: 2.6em;
+          color: #0c9;
+        }
+        
+        .two h3,
+        p {
+          margin-left: 40px;
+          vertical-align: middle;
+        }
+        
+        .two h3 {
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 22px;
+          margin-bottom: 15px;
+          color: #999 !important;
+          position: relative;
+          top: 8px;
+        }
+        
+        .two p {
+          line-height: 24px;
+          font-size: 15px;
+          color: #555;
+          padding-top: 15px;
+        }
+        
+        .markdown .title {
+          color: white;
+          font-size: 25px;
+        }
+        
+        a {
+          color: #2f81f7;
+        }
+        
+        .help {
+          color: white;
+        }
+        
+        .readme {
+          font-family: "Roboto", sans-serif;
+          padding: 15px;
+          color: white;
+          background: #161b22;
+          text-align: justify;
+          overflow: hidden;
+        }
+
+        .readme a img {
+          width: 78px;
+          height: 20px;
+          border: transparent !important;
+        }
+
+        .readme picture img {
+          width: 20vw;
+          height: auto;
+          border: transparent !important;
+        }
+
+
+
+        .readme table {
+          padding: 0px;
+          margin: 10px;
+        }
+        
+        .readme p {
+          margin: 0px !important;
+        }
+        
+        .readme a {
+          color: #2f81f7;
+        }
+        
+        .readme pre {
+          padding: 30px;
+          margin-top: 24px;
+          background: #1c1c1c;
+        }
+        
+        .readme img {
+          width: 100%;
+          height: auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          background-color: white;
+          border: solid white;
+        }
+        
+        .readme h1 {
+          padding-top: 25px;
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+        
+        .readme h2 {
+          padding-top: 25px;
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+        
+        .readme h3 {
+          padding-top: 25px;
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+        
+        .readme h4 {
+          padding-top: 25px;
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+        
+        .readme h5 {
+          padding-top: 25px;
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+        
+        .readme h6 {
+          padding-top: 25px;
+          padding-bottom: 10px;
+          text-decoration: underline;
+        }
+        
+        @media screen and (max-width: 800px) {
+          .main {
+            width: 94%;
+          }
+        }
+        @media screen and (max-width: 420px) {
+          .main {
+            width: 100%;
+          }
+          .main .cont .first .p_g {
+            width: 100%;
+          }
+          .main .cont .first .i_g {
+            width: 100%;
+          }
+          .title::before {
+            content: "";
+            width: 10%;
+          }
+          .title::after {
+            content: "";
+            width: 10%;
+          }
+          .row .one {
+            width: 100%;
+          }
+          .row .two {
+            width: 100%;
+          }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!-- Main Heading -->
+        <div class="top">
+            <h2>#Project: Get Youtube Subscirbers</h2>
+        </div> 
+
+        <!-- Main Logo -->
+        <div class="logo">
+            <img alt="logo" title="GetYoutubeSubscribers" src="data:image/png;base64,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"/>
+        </div>
+
+        <!-- Container -->
+        <div class="container">
+            <!-- Heading -->
+            <div class="heading">
+                <!-- Sections Heading -->
+                <div>
+                    <!-- Title -->
+                    <h3 class="title"><span>Project Features</span></h3>
+                </div> 
+                <!-- /Sections Heading -->
+
+                <!-- Sections -->
+                <section>
+                    <div class="row">
+                        <div class="one">
+                            <article>
+                                <h3>RESTful API</h3>
+                                <p> The project contains a RESTful API for getting information about YouTube channel subscribers. </p>
+                            </article>
+                        </div>
+                        <div class="two">
+                            <article>
+                                <h3>Friendly</h3>
+                                <p> The project is well thought structured and also contains many comments to understand it easy. </p>
+                            </article>
+                        </div>
+                </section> 
+                <!-- /Sections -->
+
+                <!-- Sections -->
+                <section>
+                    <div class="row">
+                        <div class="one">
+                            <article>
+                                <h3>Node.js and Express</h3>
+                                <p> The backend project is developed using Node.js and Express framework. </p>
+                            </article>
+                        </div>
+                        <div class="two">
+                            <article>
+                                <h3>MongoDB</h3>
+                                <p> The project uses MongoDB as the database for managing the subscriber data. </p>
+                            </article>
+                        </div>
+                    </div>
+                </section> 
+                <!-- /Sections -->
+            </div> <br /> 
+            <!-- /Heading -->
+
+            <!-- Readme -->
+            <div class="markdown">
+                <center> <span class="title">README.MD</span> </center>
+                <div class="readme"><%- readme %></div>
+            </div> 
+            <!-- /Readme --> <br />
+
+            <div>
+                <!-- Second Heading -->
+                <div class="heading">
+                    <!-- Title -->
+                    <h3 class="title"><span>Help/Support</span></h3>
+                </div> 
+                <!-- /Second Heading -->
+                
+                <!-- Sections -->
+                <section>
+                    <p class="help"> In case you have any questions that are beyond the scope of the included help file, please feel free to email me via my <a href="mailto:priyanshunegi3668@gmail.com">@email</a> </p> <br />
+                </section> 
+                <!-- /Sections -->
+            </div>
+        </div> 
+        <!-- /Container -->
+    </div>
+
+    <!-- Custom Scripts -->
+    <script>
+      (function (){
+          // Git Details
+          const branch = 'main'
+          const repo = 'get-subs';
+          const user = 'Priyanshunegi5';
+
+          // Current root url
+          const currentRoot = window.location.origin;
+          // All anchor tags
+          const anchorElements = document.getElementsByTagName('a');
+
+          // Repo url for redirecting to repo file
+          const gitUrl = `https://github.com/${user}/${repo}/`;
+          // Repo raw url for direct access to file
+          const gitRawUrl = `https://raw.github.com/${user}/${repo}/${branch}/`;
+
+          for (let i = 0; i < anchorElements.length; i++) {
+              const href = anchorElements[i].getAttribute('href');
+
+              // Skip navigation anchor tags
+              if(href[0] == '#') continue;
+              // We only have to change relative links
+              if(href[0] != './') continue;
+
+              // Update new link url
+              anchorElements[i].setAttribute('href', href.replace('./', gitUrl));
+          }
+      }())
+    </script>
+</body>
+
+</html>
