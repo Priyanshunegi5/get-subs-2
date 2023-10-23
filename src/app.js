@@ -180,5 +180,19 @@ app.get("/subscribers/:id", async (req, res) => {
   }
 });
 
+/**
+ * The api endpoint for showing error incase
+ * route does not match with any existing route.
+ *
+ * @auth none
+ * @method ANY
+ * @access public
+ * @url protocol://domain.tld/{WHEN_ROUTE_NOT_FOUND}
+ */
+app.use((req, res) => {
+  // Send a JSON response with a status of 404 (Not Found)
+  res.status(404).json({ message: "Error - Route not found" });
+});
+
 // Export the Express application
 module.exports = app;
