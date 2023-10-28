@@ -8,15 +8,16 @@
 /////////////////////////////////////////////////////////////////////////////
 // Here we import necessary modules required by server.
 /////////////////////////////////////////////////////////////////////////////
-// - Importing dotenv module
-const dotenv = require("dotenv");
+// - Importing dotenv module and
+// - load .env file contents into process.env
+require("dotenv").config();
 // - Importing custom app module
 const app = require("./src/app");
 // - Importing the custom database module
 const database = require("./src/database");
 
-// Get parsed env file
-const env = dotenv.config().parsed;
+// Get parsed env file contents
+const env = process.env;
 
 /////////////////////////////////////////////////////////////////////////////
 // Connect to our database
@@ -45,3 +46,6 @@ database.connect(
     process.exit(1);
   }
 );
+
+// Export the Express application
+module.exports = app;

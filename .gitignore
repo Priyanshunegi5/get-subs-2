@@ -30,3 +30,6 @@ public/env.js
 
 # Local Netlify folder
 .netlify
+
+# Local Vercel folder
+.vercel

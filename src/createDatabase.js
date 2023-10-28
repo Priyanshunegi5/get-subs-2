@@ -7,8 +7,9 @@
 /////////////////////////////////////////////////////////////////////////////
 // Here we import necessary modules required for creating database.
 /////////////////////////////////////////////////////////////////////////////
-// - Importing dotenv module
-const dotenv = require("dotenv");
+// - Importing dotenv module and
+// - load .env file contents into process.env
+require("dotenv").config();
 // - Import the mongoose module
 const mongoose = require("mongoose"); 
 // - Import the database seeding data
@@ -18,8 +19,8 @@ const database = require("./database");
 // - Import the custom subscriber model module
 const subscriberModel = require("./models/subscribers"); 
 
-// Get parsed env file
-const env = dotenv.config().parsed;
+// Get parsed env file contents
+const env = process.env;
 
 /////////////////////////////////////////////////////////////////////////////
 // Connect to our database

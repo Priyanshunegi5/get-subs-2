@@ -12,8 +12,6 @@
 const fs = require('fs');
 // - Import the path module
 const path = require("path");
-// - Importing dotenv module
-const dotenv = require("dotenv");
 // - Import the Express framework
 const express = require("express");
 // - Importing showdown module
@@ -25,9 +23,6 @@ const subscriberModel = require("./models/subscribers");
 // Create an Express Application
 /////////////////////////////////////////////////////////////////////////////
 const app = express();
-
-// Get parsed env file
-const env = dotenv.config().parsed;
 
 // To serve static files in Express
 app.use('/public',express.static('public'));
