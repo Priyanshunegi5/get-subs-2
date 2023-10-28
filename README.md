@@ -20,8 +20,6 @@
 
 
 
-[![BACKEND PROJECT](https://img.youtube.com/vi/5KdYW4s8V7U/0.jpg)](https://www.youtube.com/watch?v=
-3kREIbfjxPA&t=185s)
 
 
 
