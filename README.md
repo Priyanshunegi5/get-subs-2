@@ -1,3 +1,10 @@
+youtube link -https://youtu.be/3kREIbfjxPA?si=V7aGN-iafDqCAz6p
+
+deployment link -https://get-subs-2.vercel.app/
+
+
+
+
 # 🌐 AlmaBetter Backend Project
 <p align="center">
   <a title="license" href="./LICENSE">
